@@ -12,7 +12,12 @@ def largestcoin(amount, coins)
 end
 
 def make_change(amount)
-	possible_coins = [1,5,10,15,25]
-	remainder = largestcoin(possible_coins)
-
+	possible_coins = [1,5,10,15,25]		
+	until amount <= 0
+		remainder = largestcoin(amount, possible_coins)
+		p remainder
+		amount -= remainder 
+	end
 end
+
+make_change(50)
