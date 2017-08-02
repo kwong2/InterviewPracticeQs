@@ -13,5 +13,6 @@ end
 
 def make_change(amount)
 	possible_coins = [1,5,10,15,25]
-	
+	remainder = largestcoin(possible_coins)
+
 end
