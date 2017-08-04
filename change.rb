@@ -2,10 +2,13 @@
 # make change function that subtracts largest coin until change has been issued.
 
 def largestcoin(amount, coins)
-	best_coin = coins[0]
+	i = 0
+	best_coin = coins[i]
 	for coin in coins
-		if (coin < amount) && (coin > best_coin)
+		if (coin <= amount) && (coin > best_coin)
 			best_coin = coin
+		else
+		coins[i+=1]	
 		end
 	end
 	best_coin
