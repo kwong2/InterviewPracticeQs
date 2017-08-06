@@ -1,38 +1,41 @@
-def largest_coin(amount,coins)
-	best_coin = coins[0]
+def largest_coin_finder(amount,coins)
+	largest_coin = coins[0]
 	for coin in coins
-		if (coin <= amount) && (coin > best_coin)
-			best_coin = coin
+		if (coin <= amount) && (coin > largest_coin)
+			largest_coin = coin
+		else
+			nil
 		end
 	end
-	best_coin
+	largest_coin
 end
 
-# def largest_coin(amount, coins)
-# 	i = 0
-# 	while i < coins.length
-# 		best_coin = coins[i]
-# 		if (best_coin <= amount) && (best_coin > coins[i])
-# 			best_coin
-# 		else 
-# 			i += 1
+# def smallest_coin_finder(amount, coins)
+# 	smallest_coin = coins[0]
+# 	for coin in coins 
+# 		if coin < smallest_coin
+# 			smallest_coin = coin
 # 		end
 # 	end
-# 	p best_coin
+# 	smallest_coin
 # end
 
-# largest_coin(75,[25,50,10,15])
+# largest_coin(75,[80,90])
 
 def change(amount)
-	denoms = [1, 5, 10, 25]
+	coins = [80,90]
 	arr = []
-	until amount <= 0
-		chosen_one = largest_coin(amount,denoms.sort)
-		arr << chosen_one
-		amount -= chosen_one
+	largest_coin = largest_coin_finder(amount, coins.sort)
+	if amount < largest_coin
+		puts "There are no coins to make this amount possible."
+	else
+		until amount <= 0
+			chosen_one = largest_coin_finder(amount,coins.sort)
+			arr << chosen_one
+			amount -= chosen_one
+		end
 	end
 	puts "Your change is: #{arr}" if arr.count >= 1
-	puts "You must be joking right?" if arr == []
 end
 
-change(43)
+change(280)
