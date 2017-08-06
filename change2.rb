@@ -11,7 +11,7 @@ def largest_coin_finder(amount,coins)
 end
 
 def change(amount)
-	coins = [1,5,10,25,50]
+	coins = [5,10,25,50]
 	arr = []
 	largest_coin = largest_coin_finder(amount, coins.sort)
 	if amount < largest_coin
@@ -26,4 +26,4 @@ def change(amount)
 	end
 end
 
-change(-240)
+change(4)
