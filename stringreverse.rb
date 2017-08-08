@@ -9,4 +9,4 @@ def str_rev(str)
 	end
 end
 
-str_rev("Hello")
+str_rev("Hello there, my name is Kevin!")
